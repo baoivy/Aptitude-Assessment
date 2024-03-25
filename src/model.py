@@ -68,8 +68,7 @@ class ScoreReviewModel(pl.LightningModule):
         input, verdict = train_batch['tokenized'], train_batch['label']
         output, output_head = self.forward(input)
         loss_cea = self.loss_ce(output, verdict)
-        loss_scl = 0
-        #self.loss_scl(output_head, verdict)
+        loss_scl = self.loss_scl(output_head, verdict)
         train_loss = loss_cea + self.alpha*loss_scl 
         self.log("train_loss", train_loss, on_epoch=True, prog_bar=True, logger=True)
         return train_loss
@@ -79,8 +78,7 @@ class ScoreReviewModel(pl.LightningModule):
         output, output_head = self.forward(input)
         output = self.softmax(output)
         loss_cea = self.loss_ce(output, verdict)
-        loss_scl = 0
-        #self.loss_scl(output_head, verdict)
+        loss_scl = self.loss_scl(output_head, verdict)
         valid_loss = loss_cea + self.alpha*loss_scl 
         accuracy = torch.sum(torch.argmax(output) == verdict).item() / (len(verdict) * 1.0)
         self.log("valid_loss", valid_loss, on_epoch=True, prog_bar=True, logger=True)
