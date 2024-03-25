@@ -1,0 +1,12 @@
+numpy
+pandas
+pytorch-lightning
+pytz
+scikit-learn
+scipy
+spacy
+scispacy
+tokenizers
+torch==2.0.1
+tqdm
+transformers==4.2.2
