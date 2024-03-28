@@ -1,5 +1,5 @@
 python src/train.py \
-    --input_file data/argumented_subtaskB_train.jsonl \
+    --input_file data/sample_train.jsonl \
     --model roberta-large \
     --lr 2e-5 \
     --epoch 2 \
