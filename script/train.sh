@@ -1,10 +1,12 @@
 python src/train.py \
-    --input_file data/sample.json \
-    --encoder_name xlm-roberta-large \
-    --label_coff 1 \
-    --rationale_coff 15 \
-    --lr 5e-5 \
-    --epoch 3\
+    --input_file data/argumented_subtaskB_train.jsonl \
+    --model roberta-large \
+    --lr 2e-5 \
+    --epoch 2 \
     --frac_warmup 0.1 \
     --gradient_accumulations 8 \
-    --batch_size 2 
+    --batch_size 8 \
+    --num_workers 16\
+    --alpha 0.9 \
+    --precision bf16-mixed \
+    --weight_decay 0.01 \
