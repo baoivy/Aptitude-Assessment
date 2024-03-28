@@ -1,6 +1,6 @@
 python src/train.py \
     --input_file data/sample_train.jsonl \
-    --model roberta-large \
+    --model xlm-roberta-large \
     --lr 2e-5 \
     --epoch 2 \
     --frac_warmup 0.1 \
