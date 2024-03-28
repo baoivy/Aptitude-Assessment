@@ -1,5 +1,5 @@
-python src/eval.py \
-    --data/sample.json \
-    --encoder_name xlm-roberta-large \
-    --weight_file 1 \
-    --rationale_coff 15 
+python src/predict.py \
+    --input_file data/sample.json \
+    --output_file output/result.jsonl \
+    --checkpoint_path bert-base-uncased \
+    --predict True
