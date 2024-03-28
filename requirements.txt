@@ -10,3 +10,4 @@ tokenizers
 torch==2.0.1
 tqdm
 transformers==4.2.2
+emoji
